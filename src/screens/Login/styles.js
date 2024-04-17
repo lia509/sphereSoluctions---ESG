@@ -12,6 +12,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#C9D4FF",
     borderRadius: 5,
   },
+  input: {
+    width: "70%",
+    margin: 10,
+    padding: 10,
+    borderWidth: 1,
+    borderRadius: 5,
+  },
+  linha: {
+    height: 3, 
+    width: '70%',  
+    marginTop: 5,
+    marginBottom: 5,
+    backgroundColor: 'Black',
+  },
 });
 
 export default styles;

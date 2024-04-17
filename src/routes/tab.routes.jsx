@@ -1,10 +1,9 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
 
-import Home from "../screens/Home";
+import Home from "../screens/Login";
 import Profile from "../screens/Profile";
-import Category from "../screens/Category";
-import { user } from "../data/Profile";
+import Category from "../screens/Cadastro";
 
 const Tab = createBottomTabNavigator();
 
