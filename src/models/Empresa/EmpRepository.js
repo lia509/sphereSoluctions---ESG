@@ -5,9 +5,13 @@ import {empresa} from '../../data/Emp.js';
     constructor() {
         this.empresas = [];
     }
+    conferirirEmps( cnpjEmp, cepEmp){
+        return this.empresas.filter(empresa => empresa.cnpjEmp === cnpjEmp && empresa.cepEmp === cepEmp);
+       }
     addEmpresa(empresa) {
         this.empresas.push(empresa);
     }
+
     getAllEmpresas() {
         return this.empresas;
     }
