@@ -2,7 +2,7 @@ import { View } from "react-native";
 
 import styles from "./styles";
 import Title from "../../components/Title";
-import { user } from "../../data/Profile";
+// import { user } from "../../data/Profile";
 import TouchButton from "../../components/TouchButton";
 
 export default function Home() {
