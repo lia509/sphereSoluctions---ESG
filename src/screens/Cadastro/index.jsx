@@ -4,41 +4,35 @@ import Title from "../../components/Title";
 import TouchButton from "../../components/TouchButton";
 import {useState} from 'react';
 
-export default function Category() {
+export default function Cadastro() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [cep, setCep] = useState('');
   const [cnpj, setCnpj] = useState('');
   const [senha, setSenha] = useState('');
 
+
   const Criar = () =>{
     console.log("passou aqui");
- if( nome != "" || data != "" || cor1 != "" || cor2 != "" || populacao != "" || loc != "" || nome_gov != "" || titulo_gov != ""){
-    const newPlanet = new Planet(nome,data,cor1,cor2,populacao,galaxia,ss,coordenadas,nome_gov,titulo_gov);
-    planetsRepository.addPlanet(newPlanet);
+ if( nome != "" && email != "" && cep != "" && cnpj != "" && senha != ""){
+    const newEmp = new Emp(nome,email,cep,cnpj,senha);
+    EmpRepository.addEmpresa(newEmp);
     ClearInputs();
-    navigation.navigate('ListPlanets');
+    alert("Empresa cadastrada com sucesso!");
+    navigation.navigate('Home');
     
   }else{
-    alert("Preencha todos os campos");
     ClearInputs();
+    return alert("Preencha todos os campos");
+
   }
 
-     navigation.navigate('ListPlanets');
-};
-
-};
+}
 const ClearInputs = () => {
- setNome("");
- setData("");
- setCor1("");
- setCor2("");
- setPopulacao("");
- setGalaxia("");
- setSs("");
- setCoordenadas("");
- setNome_gov("");
- setTitulo_gov("");
+setNome('');
+setEmail('');
+setCep('');
+setCnpj('');
 };
   return (
     <View style={styles.container}>
@@ -76,4 +70,22 @@ value={senha}/>
 <TouchButton onPress={Criar()}><title>Enviar Cadastro</title></TouchButton>
     </View>
   );
+  
+}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

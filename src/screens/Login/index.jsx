@@ -1,12 +1,13 @@
 import { TextInput, View,TouchableOpacity,Text,} from "react-native";
 import styles from "./styles";
 import Title from "../../components/Title";
-import TouchButton from "../../components/TouchButton";
 import { useState } from "react";
 import ListaEmps from "../../models/Empresa/EmpRepository";
+import { useNavigation } from "@react-navigation/native";
 
 
 export default function Home() {
+const navigation = useNavigation();
 
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -18,7 +19,8 @@ export default function Home() {
 const login = ListaEmps.getLogin(senha,email);
 
 if(login == false){
-alert('Empresa não Cadastrada');
+  alert('Cadastre a Empresa');
+console.log('Empresa não Cadastrada');
 console.log(login);
 
   }
@@ -52,7 +54,12 @@ value={senha}/>
 <View style={styles.linha} ></View>
 <TouchableOpacity  onPress={Entrar} >
   <Text>Entrar</Text></TouchableOpacity>
-      <TouchButton route="Cadastro" title="Não possuí conta? Cadastre-se aqui."/>
+  <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Cadastro')}
+      >
+        <Title title="Não possui uma Conta? Clique aqui" />
+      </TouchableOpacity>
 
     </View>
   );
